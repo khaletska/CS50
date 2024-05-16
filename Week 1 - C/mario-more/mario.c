@@ -1,13 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void printSymbols(char symbol, int n)
-{
-    for (int i = 0; i < n; i++)
-    {
-        printf("%c", symbol);
-    }
-}
+void printSymbols(char symbol, int n);
 
 int main(void)
 {
@@ -28,5 +22,13 @@ int main(void)
         printSymbols(space, 2);
         printSymbols(hashtag, i);
         printf("\n");
+    }
+}
+
+void printSymbols(char symbol, int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        printf("%c", symbol);
     }
 }

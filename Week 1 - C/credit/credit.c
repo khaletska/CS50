@@ -1,9 +1,17 @@
 #include <cs50.h>
 #include <stdio.h>
 
+string checkCardNumber(long n);
+string findPaymentSystem(int length, int firstDigit, int secondDigit);
+
 int main(void)
 {
     long n = get_long("Enter the card number: ");
+    printf("%s", checkCardNumber(n));
+}
+
+string checkCardNumber(long n)
+{
     int digit;
     int previousDigit;
     int length = 0;
@@ -33,30 +41,30 @@ int main(void)
 
     if (checksum % 10 != 0)
     {
-        printf("INVALID\n");
+        return "INVALID\n";
     }
-    else
-    {
-        bool amex = length == 15 &&
-                    ((digit == 3 && previousDigit == 4) || (digit == 3 && previousDigit == 7));
-        bool mastercard = length == 16 && digit == 5 && previousDigit >= 1 && previousDigit <= 5;
-        bool visa = (length == 13 && digit == 4) || (length == 16 && digit == 4);
 
-        if (amex)
-        {
-            printf("AMEX\n");
-        }
-        else if (mastercard)
-        {
-            printf("MASTERCARD\n");
-        }
-        else if (visa)
-        {
-            printf("VISA\n");
-        }
-        else
-        {
-            printf("INVALID\n");
-        }
+    return findPaymentSystem(length, digit, previousDigit);
+}
+
+string findPaymentSystem(int length, int firstDigit, int secondDigit)
+{
+    bool amex = length == 15 &&
+                ((firstDigit == 3 && secondDigit == 4) || (firstDigit == 3 && secondDigit == 7));
+    bool mastercard = length == 16 && firstDigit == 5 && secondDigit >= 1 && secondDigit <= 5;
+    bool visa = (length == 13 && firstDigit == 4) || (length == 16 && firstDigit == 4);
+
+    if (amex)
+    {
+        return "AMEX\n";
     }
+    else if (mastercard)
+    {
+        return "MASTERCARD\n";
+    }
+    else if (visa)
+    {
+        return "VISA\n";
+    }
+    return "INVALID\n";
 }
