@@ -8,14 +8,13 @@ Simple brick breaker game created in Scratch. Press green flag to start the game
 
 1. _Hello, world._
 
-2. _Hello, it's me!_ Asks for your name and prints "hello, <name>".
+2. _Hello, it's me!_ Asks for your name and prints "hello, \<name\>".
 
 3. _Mario._ Recreates that pyramid of given size between 1 and 8 using hashes (#) for bricks, as in the below:
 
-````# #
-  ##  ##
- ###  ###
-####  ####```
+`   #  #`
+`  ##  ##`
+` ###  ###`
+`####  ####`
 
-4. *Credit.* Checks the validity of a given credit card number.
-````
+4. _Credit._ Checks the validity of a given credit card number.
