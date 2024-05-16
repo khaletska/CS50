@@ -1,19 +1,11 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void printHashtag(int n)
+void printSymbols(char symbol, int n)
 {
     for (int i = 0; i < n; i++)
     {
-        printf("#");
-    }
-}
-
-void printSpace(int n)
-{
-    for (int i = 0; i < n; i++)
-    {
-        printf(" ");
+        printf("%c", symbol);
     }
 }
 
@@ -27,12 +19,14 @@ int main(void)
     }
     while (n < 1 || n > 8);
 
+    char space = ' ';
+    char hashtag = '#';
     for (int i = 1; i <= n; i++)
     {
-        printSpace(n - i);
-        printHashtag(i);
-        printSpace(2);
-        printHashtag(i);
+        printSymbols(space, n - i);
+        printSymbols(hashtag, i);
+        printSymbols(space, 2);
+        printSymbols(hashtag, i);
         printf("\n");
     }
 }
