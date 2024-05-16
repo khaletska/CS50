@@ -12,9 +12,11 @@ Simple brick breaker game created in Scratch. Press green flag to start the game
 
 3. _Mario._ Recreates that pyramid of given size between 1 and 8 using hashes (#) for bricks, as in the below:
 
-`   #  #`
-`  ##  ##`
-` ###  ###`
-`####  ####`
+```
+   #  #
+  ##  ##
+ ###  ###
+####  ####
+```
 
 4. _Credit._ Checks the validity of a given credit card number.
