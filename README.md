@@ -25,3 +25,4 @@ Simple brick breaker game created in Scratch. Press green flag to start the game
 
 1. _Scrabble._ The program prompts for input twice: once for “Player 1” to input their word and once for “Player 2” to input their word. Then, depending on which player scores the most points, it either prints “Player 1 wins!”, “Player 2 wins!”, or “Tie!” (in the event the two players score equal points).
 2. _Readability._ A program that prompts user for some text and calculates the approximate grade level needed to comprehend it.
+3. _Substitution._ The program “encrypts” (i.e., conceal in a reversible way) a message by replacing every letter with another letter. To do so, we use a key: in this case, a mapping of each of the letters of the alphabet to the letter it should correspond to when we encrypt it.
