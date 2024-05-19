@@ -1,15 +1,11 @@
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-bool isValid(string key);
-int getIndex(char letter);
-
-int SIZE = 26;
-char ALPHABET[26] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-                     'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-int values[26];
+bool isKeyValid(string key);
+string encryptText(string key, string text);
 
 int main(int argc, string argv[])
 {
@@ -27,30 +23,62 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    if (!isValid(key))
+    if (!isKeyValid(key))
     {
-        printf("Key should contaim each letter exactly once.\n");
+        printf("Key should contain each letter exactly once.\n");
         return 1;
     }
 
     string text = get_string("plaintext:  ");
 
+    string cipher = encryptText(key, text);
+    printf("ciphertext: %s\n", cipher);
+}
+
+bool isKeyValid(string key)
+{
+    bool letterCounts[26] = {false};
+
+    for (int i = 0; i < strlen(key); i++)
+    {
+        if (isalpha(key[i]))
+        {
+            key[i] = toupper(key[i]);
+            if (letterCounts[key[i] - 65])
+            {
+                return false;
+            }
+            else
+            {
+                letterCounts[key[i] - 65] = true;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+string encryptText(string key, string text)
+{
     int textSize = strlen(text);
-    char cipher[textSize];
+    string cipher = malloc((textSize) * sizeof(char));
     cipher[textSize] = '\0';
 
     for (int i = 0; i < textSize; i++)
     {
-        char ch = text[i];
-        if (!isalpha(ch))
+        char textCharacter = text[i];
+        if (!isalpha(textCharacter))
         {
-            cipher[i] = ch;
+            cipher[i] = textCharacter;
             continue;
         }
 
-        bool islower = islower(ch);
-        char upper = toupper(ch);
-        int index = getIndex(upper);
+        bool islower = islower(textCharacter);
+        int index = toupper(textCharacter) - 65;
 
         if (islower)
         {
@@ -62,34 +90,5 @@ int main(int argc, string argv[])
         }
     }
 
-    printf("ciphertext: %s\n", cipher);
-}
-
-int getIndex(char letter)
-{
-    char uppercase = toupper(letter);
-    for (int i = 0; i < SIZE; i++)
-    {
-        if (ALPHABET[i] == uppercase)
-        {
-            return i;
-        }
-    }
-    return -1;
-}
-
-bool isValid(string key)
-{
-    for (int i = 0; i < SIZE; i++)
-    {
-        char symbol = key[i];
-        int index = getIndex(symbol);
-        if (index == -1)
-            return false;
-        if (values[index] > 0)
-            return false;
-        values[index] = 1;
-    }
-
-    return true;
+    return cipher;
 }
