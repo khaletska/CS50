@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <math.h>
 #include <stdio.h>
+#include <string.h>
 
 int getLevel(string text);
 
@@ -27,30 +28,36 @@ int main(void)
 
 int getLevel(string text)
 {
-    int letters = 0;
-    int words = 0;
-    int sentences = 0;
-    int length = 0;
+    int countLetters = 0;
+    int countWords = 0;
+    int countSentences = 0;
+    int textLengthChar = strlen(text);
 
-    while (text[length] != 0)
+    for (int i = 0; i < textLengthChar; i++)
     {
-        if (text[length] == ' ')
+        char character = text[i];
+        if (character == ' ')
         {
-            words++;
+            countWords++;
         }
-        else if (text[length] == '.' || text[length] == '!' || text[length] == '?')
+        else if (character == '.' || character == '!' || character == '?')
         {
-            sentences++;
+            countSentences++;
         }
         else
         {
-            letters++;
+            countLetters++;
         }
-
-        length++;
     }
-    words++;
+    // there is no space in the end of the sentence so we need to add the last word manually
+    countWords++;
 
-    return 0.0588 * round(100 * (double) letters / (double) words) -
-           0.296 * round(100 * (double) sentences / (double) words) - 15.8;
+    // if there is no punctuation in the world, we'll consider everything one sentence
+    if (countSentences == 0)
+        countSentences++;
+
+    int lettersPer100Words = round(100 * (double) countLetters / (double) countWords);
+    int sentencesPer100Words = round(100 * (double) countSentences / (double) countWords);
+
+    return 0.0588 * lettersPer100Words - 0.296 * sentencesPer100Words - 15.8;
 }
