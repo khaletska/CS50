@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: It is slower than sort2 and takes about the same amount of time as sort3 to sort the numbers from random order but it is faster than sort3 with already sorted array.
+
+sort2 uses: merge sort
+
+How do you know?: It is the fastest for all cases and the speed is stable.
+
+sort3 uses: selection sort
+
+How do you know?: It is slower than sort2 and also slower than sort1 for already sorted array.
