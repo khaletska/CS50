@@ -51,4 +51,4 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-Week 1 - C/.DS_Store
+.DS_Store
