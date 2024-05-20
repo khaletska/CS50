@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-bool isKeyValid(string key);
-string encryptText(string key, string text);
+bool is_key_valid(string key);
+string encrypt_text(string key, string text);
 
 int main(int argc, string argv[])
 {
@@ -23,7 +23,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    if (!isKeyValid(key))
+    if (!is_key_valid(key))
     {
         printf("Key should contain each letter exactly once.\n");
         return 1;
@@ -31,26 +31,26 @@ int main(int argc, string argv[])
 
     string text = get_string("plaintext:  ");
 
-    string cipher = encryptText(key, text);
+    string cipher = encrypt_text(key, text);
     printf("ciphertext: %s\n", cipher);
 }
 
-bool isKeyValid(string key)
+bool is_key_valid(string key)
 {
-    bool letterCounts[26] = {false};
+    bool letter_counts[26] = {false};
 
-    for (int i = 0; i < strlen(key); i++)
+    for (int i = 0, key_length = strlen(key); i < key_length; i++)
     {
         if (isalpha(key[i]))
         {
             key[i] = toupper(key[i]);
-            if (letterCounts[key[i] - 65])
+            if (letter_counts[key[i] - 'A'])
             {
                 return false;
             }
             else
             {
-                letterCounts[key[i] - 65] = true;
+                letter_counts[key[i] - 'A'] = true;
             }
         }
         else
@@ -62,23 +62,21 @@ bool isKeyValid(string key)
     return true;
 }
 
-string encryptText(string key, string text)
+string encrypt_text(string key, string text)
 {
-    int textSize = strlen(text);
-    string cipher = malloc((textSize) * sizeof(char));
-    cipher[textSize] = '\0';
+    string cipher = text;
 
-    for (int i = 0; i < textSize; i++)
+    for (int i = 0, text_size = strlen(text); i < text_size; i++)
     {
-        char textCharacter = text[i];
-        if (!isalpha(textCharacter))
+        char text_character = text[i];
+        if (!isalpha(text_character))
         {
-            cipher[i] = textCharacter;
+            cipher[i] = text_character;
             continue;
         }
 
-        bool islower = islower(textCharacter);
-        int index = toupper(textCharacter) - 65;
+        bool islower = islower(text_character);
+        int index = toupper(text_character) - 'A';
 
         if (islower)
         {

@@ -4,13 +4,13 @@
 #include <stdio.h>
 #include <string.h>
 
-int getLevel(string text);
+int get_level(string text);
 
 int main(void)
 {
     string text = get_string("Text: ");
 
-    int level = getLevel(text);
+    int level = get_level(text);
 
     if (level < 1)
     {
@@ -26,38 +26,37 @@ int main(void)
     }
 }
 
-int getLevel(string text)
+int get_level(string text)
 {
-    int countLetters = 0;
-    int countWords = 0;
-    int countSentences = 0;
-    int textLengthChar = strlen(text);
+    int count_letters = 0;
+    int count_words = 0;
+    int count_sentences = 0;
 
-    for (int i = 0; i < textLengthChar; i++)
+    for (int i = 0, text_length_char = strlen(text); i < text_length_char; i++)
     {
         char character = text[i];
         if (character == ' ')
         {
-            countWords++;
+            count_words++;
         }
         else if (character == '.' || character == '!' || character == '?')
         {
-            countSentences++;
+            count_sentences++;
         }
         else
         {
-            countLetters++;
+            count_letters++;
         }
     }
     // there is no space in the end of the sentence so we need to add the last word manually
-    countWords++;
+    count_words++;
 
     // if there is no punctuation in the world, we'll consider everything one sentence
-    if (countSentences == 0)
-        countSentences++;
+    if (count_sentences == 0)
+        count_sentences++;
 
-    int lettersPer100Words = round(100 * (double) countLetters / (double) countWords);
-    int sentencesPer100Words = round(100 * (double) countSentences / (double) countWords);
+    int letters_per_100_words = round(100 * (double) count_letters / (double) count_words);
+    int sentences_per_100_words = round(100 * (double) count_sentences / (double) count_words);
 
-    return 0.0588 * lettersPer100Words - 0.296 * sentencesPer100Words - 15.8;
+    return 0.0588 * letters_per_100_words - 0.296 * sentences_per_100_words - 15.8;
 }

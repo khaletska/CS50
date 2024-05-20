@@ -6,11 +6,11 @@ Simple brick breaker game created in Scratch. Press green flag to start the game
 
 ## Problem Set 1 - C
 
-1. _Hello, world._
+1. [_Hello, world._](/Week_1_C/world/hello.c)
 
-2. _Hello, it's me!_ Asks for your name and prints "hello, \<name\>".
+2. [_Hello, it's me!_](/Week_1_C/me/hello.c) Asks for your name and prints "hello, \<name\>".
 
-3. _Mario._ Recreates that pyramid of given size between 1 and 8 using hashes (#) for bricks, as in the below:
+3. [_Mario._](/Week_1_C/mario-more/mario.c) Recreates that pyramid of given size between 1 and 8 using hashes (#) for bricks, as in the below:
 
 ```
    #  #
@@ -19,10 +19,16 @@ Simple brick breaker game created in Scratch. Press green flag to start the game
 ####  ####
 ```
 
-4. _Credit._ Checks the validity of a given credit card number.
+4. [_Credit._](/Week_1_C/credit/credit.c) Checks the validity of a given credit card number.
 
 ## Problem Set 2 - Arrays
 
-1. _Scrabble._ The program prompts for input twice: once for “Player 1” to input their word and once for “Player 2” to input their word. Then, depending on which player scores the most points, it either prints “Player 1 wins!”, “Player 2 wins!”, or “Tie!” (in the event the two players score equal points).
-2. _Readability._ A program that prompts user for some text and calculates the approximate grade level needed to comprehend it.
-3. _Substitution._ The program “encrypts” (i.e., conceal in a reversible way) a message by replacing every letter with another letter. To do so, we use a key: in this case, a mapping of each of the letters of the alphabet to the letter it should correspond to when we encrypt it.
+1. [_Scrabble._](/Week_2_Arrays/scrabble/scrabble.c) The program prompts for input twice: once for “Player 1” to input their word and once for “Player 2” to input their word. Then, depending on which player scores the most points, it either prints “Player 1 wins!”, “Player 2 wins!”, or “Tie!” (in the event the two players score equal points).
+2. [_Readability._](/Week_2_Arrays/readability/readability.c) A program that prompts user for some text and calculates the approximate grade level needed to comprehend it.
+3. [_Substitution._](/Week_2_Arrays/substitution/substitution.c) The program “encrypts” (i.e., conceal in a reversible way) a message by replacing every letter with another letter. To do so, we use a key: in this case, a mapping of each of the letters of the alphabet to the letter it should correspond to when we encrypt it.
+
+## Problem Set 3 - Algorithms
+
+1. [_Sort._]() The task was to analyze three sorting programs and their performance for different arrays. Then conclude which one of three is Bubble sort, Selection sort or Merge sort.
+2. [_Plurality._]()
+3. [\_\_]()
