@@ -29,6 +29,11 @@ Simple brick breaker game created in Scratch. Press green flag to start the game
 
 ## Problem Set 3 - Algorithms
 
-1. [_Sort._]() The task was to analyze three sorting programs and their performance for different arrays. Then conclude which one of three is Bubble sort, Selection sort or Merge sort.
-2. [_Plurality._]()
-3. [\_\_]()
+1. [_Sort._](/Week_3_Algorithms/sort/answers.txt) The task was to analyse three sorting programs and their performance for different arrays. Then conclude which one of three is Bubble sort, Selection sort or Merge sort.
+2. [_Plurality._](/Week_3_Algorithms/plurality/plurality.c) The program simulates voting process: every voter gets to vote for one candidate. At the end of the election, whichever candidate has the greatest number of votes is declared the winner of the election.
+
+#### Usage:
+
+`./plurality <candidates names>`
+
+3. [_Tideman._](/Week_3_Algorithms/tideman/tideman.c)
