@@ -25,7 +25,16 @@ Simple brick breaker game created in Scratch. Press green flag to start the game
 
 1. [_Scrabble._](/Week_2_Arrays/scrabble/scrabble.c) The program prompts for input twice: once for “Player 1” to input their word and once for “Player 2” to input their word. Then, depending on which player scores the most points, it either prints “Player 1 wins!”, “Player 2 wins!”, or “Tie!” (in the event the two players score equal points).
 2. [_Readability._](/Week_2_Arrays/readability/readability.c) A program that prompts user for some text and calculates the approximate grade level needed to comprehend it.
+
+#### Usage:
+
+`./readability <text>`
+
 3. [_Substitution._](/Week_2_Arrays/substitution/substitution.c) The program “encrypts” (i.e., conceal in a reversible way) a message by replacing every letter with another letter. To do so, we use a key: in this case, a mapping of each of the letters of the alphabet to the letter it should correspond to when we encrypt it.
+
+#### Usage:
+
+`./substitution <key>`
 
 ## Problem Set 3 - Algorithms
 
@@ -36,4 +45,8 @@ Simple brick breaker game created in Scratch. Press green flag to start the game
 
 `./plurality <candidates names>`
 
-3. [_Tideman._](/Week_3_Algorithms/tideman/tideman.c)
+3. [_Tideman._](/Week_3_Algorithms/tideman/tideman.c) Tideman is a voting system algorithm that determines the winner of an election using a ranked-choice voting method. In this system, voters can rank candidates in order of preference. The Tideman algorithm pairs every candidate against every other candidate and counts the number of voters who prefer one candidate over the other. The candidate who wins the most pairings is declared the winner. This algorithm is designed to provide a fair and democratic election outcome.
+
+#### Usage:
+
+`./tideman <candidates names>`
