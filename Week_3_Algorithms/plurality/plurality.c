@@ -21,6 +21,7 @@ int candidate_count;
 // Function prototypes
 bool vote(string name);
 void print_winner(void);
+int winning_votes_count(void);
 
 int main(int argc, string argv[])
 {
@@ -80,32 +81,26 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    // sort
+    int winning_number_votes = winning_votes_count();
+
     for (int i = 0; i < candidate_count; i++)
     {
-        int biggest_votes_index = i;
-        for (int j = i + 1; j < candidate_count; j++)
-        {
-            if (candidates[j].votes > candidates[biggest_votes_index].votes)
-            {
-                biggest_votes_index = j;
-            }
-        }
-        candidate temp = candidates[i];
-        candidates[i] = candidates[biggest_votes_index];
-        candidates[biggest_votes_index] = temp;
-    }
-
-    // compare
-    int winner_index = 0;
-    printf("%s\n", candidates[winner_index].name);
-
-    while (winner_index < candidate_count - 1 &&
-           candidates[winner_index].votes == candidates[winner_index + 1].votes)
-    {
-        printf("%s\n", candidates[winner_index + 1].name);
-        winner_index++;
+        if (candidates[i].votes == winning_number_votes)
+            printf("%s\n", candidates[i].name);
     }
 
     return;
+}
+
+int winning_votes_count(void)
+{
+    int max_votes = candidates[0].votes;
+
+    for (int i = 1; i < candidate_count; i++)
+    {
+        if (candidates[i].votes > max_votes)
+            max_votes = candidates[i].votes;
+    }
+
+    return max_votes;
 }
