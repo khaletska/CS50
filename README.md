@@ -24,7 +24,7 @@ Simple brick breaker game created in Scratch. Press green flag to start the game
 ## Problem Set 2 - Arrays
 
 1. [_Scrabble._](/Week_2_Arrays/scrabble/scrabble.c) The program prompts for input twice: once for “Player 1” to input their word and once for “Player 2” to input their word. Then, depending on which player scores the most points, it either prints “Player 1 wins!”, “Player 2 wins!”, or “Tie!” (in the event the two players score equal points).
-2. [_Readability._](/Week_2_Arrays/readability/readability.c) A program that prompts user for some text and calculates the approximate grade level needed to comprehend it.
+2. [_Readability._](/Week_2_Arrays/readability/readability.c) A program that prompts user for some text and calculates the approximate grade level needed to comprehend it.\
 
 #### Usage:
 
@@ -41,12 +41,26 @@ Simple brick breaker game created in Scratch. Press green flag to start the game
 1. [_Sort._](/Week_3_Algorithms/sort/answers.txt) The task was to analyse three sorting programs and their performance for different arrays. Then conclude which one of three is Bubble sort, Selection sort or Merge sort.
 2. [_Plurality._](/Week_3_Algorithms/plurality/plurality.c) The program simulates voting process: every voter gets to vote for one candidate. At the end of the election, whichever candidate has the greatest number of votes is declared the winner of the election.
 
-#### Usage:
-
-`./plurality <candidates names>`
+#### Usage: `./plurality <candidates names>`
 
 3. [_Tideman._](/Week_3_Algorithms/tideman/tideman.c) Tideman is a voting system algorithm that determines the winner of an election using a ranked-choice voting method. In this system, voters can rank candidates in order of preference. The Tideman algorithm pairs every candidate against every other candidate and counts the number of voters who prefer one candidate over the other. The candidate who wins the most pairings is declared the winner. This algorithm is designed to provide a fair and democratic election outcome.
 
 #### Usage:
 
 `./tideman <candidates names>`
+
+## Problem Set 4 - Memory
+
+1. [_Volume._](/Week_4_Memory/volume/volume.c) A program to modify the volume of an audio file.
+
+#### Usage:
+
+`./volume input.wav output.wav <multiplier>`
+
+2. [_Filter._](/Week_4_Memory/filter-more/helpers.c) A program to apply filters to BMPs: grayscale `(-g)`, reflect `(-r)`, blur `(-b)`, edges `(-e)`.
+
+#### Usage:
+
+`./filter -g images/yard.bmp images/yard-grayscale.bmp`
+
+3. [_Recover._](/Week_4_Memory/recover/recover.c) to be done..
