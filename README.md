@@ -63,4 +63,8 @@ Simple brick breaker game created in Scratch. Press green flag to start the game
 
 `./filter -g images/yard.bmp images/yard-grayscale.bmp`
 
-3. [_Recover._](/Week_4_Memory/recover/recover.c) to be done..
+3. [_Recover._](/Week_4_Memory/recover/recover.c) A program to recover JPEGs from a memory card.
+
+#### Usage:
+
+`./recover <filename>.raw`
