@@ -4,7 +4,6 @@
 #include <stdlib.h>
 
 bool is_new_image(uint8_t buffer[512]);
-bool is_fourth_byte_correct(uint8_t byte);
 
 int main(int argc, char *argv[])
 {
@@ -33,7 +32,7 @@ int main(int argc, char *argv[])
                 fclose(output);
 
             char directory[15];
-            sprintf(directory, "images/%03d.jpg", pictures_count);
+            sprintf(directory, "%03d.jpg", pictures_count);
             output = fopen(directory, "w");
             if (output == NULL)
             {
@@ -65,22 +64,5 @@ bool is_new_image(uint8_t buffer[512])
             return false;
     }
 
-    if (!is_fourth_byte_correct(buffer[3]))
-        return false;
-
-    return true;
-}
-
-bool is_fourth_byte_correct(uint8_t byte)
-{
-    uint8_t image_fourth_byte[16] = {0xe0, 0xe1, 0xe2, 0xe3, 0xe4, 0xe5, 0xe6, 0xe7,
-                                     0xe8, 0xe9, 0xea, 0xeb, 0xec, 0xed, 0xee, 0xef};
-
-    for (int index = 0; index < 16; index++)
-    {
-        if (image_fourth_byte[index] == byte)
-            return true;
-    }
-
-    return false;
+    return buffer[3] >= 0xe0 && buffer[3] <= 0xef;
 }
