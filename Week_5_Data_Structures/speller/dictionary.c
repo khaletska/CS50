@@ -52,17 +52,14 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    switch (strlen(word))
+    int length = strlen(word);
+    int hash_index = 0;
+    for (int index = 0; index < length; index++)
     {
-        case 0:
-            return 0;
-        case 1:
-            return toupper(word[0]) - 'A';
-        case 2:
-            return (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A');
-        default:
-            return (toupper(word[0]) - 'A') + (toupper(word[1]) - 'A') + (toupper(word[2]) - 'A');
+        hash_index = hash_index * 7 + word[index];
     }
+
+    return hash_index % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
