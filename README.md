@@ -68,3 +68,13 @@ Simple brick breaker game created in Scratch. Press green flag to start the game
 #### Usage:
 
 `./recover <filename>.raw`
+
+## Problem Set 5 - Data Structures
+
+1. [_Inheritance._](/Week_5_Data_Structures/inheritance/inheritance.c) Simulates the inheritance of blood types for each member of a family.
+
+2. [_Speller._](/Week_5_Data_structures/speller/dictionary.c) A program that spell-checks a file with given dictionary, using a hash table.
+
+#### Usage:
+
+`Usage: ./speller <dictionary> <text>.txt`
